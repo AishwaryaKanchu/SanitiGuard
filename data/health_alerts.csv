@@ -1,0 +1,3 @@
+alert_id,area,latitude,longitude,risk_level,possible_diseases,recommended_action,issued_on
+HEALTH-Zone 1,Zone 1,17.385,78.486,HIGH,"Dengue, Malaria, Diarrhea","Increase medical readiness, fogging, awareness camps",2025-12-29 14:21:48
+HEALTH-Zone 4,Zone 4,17.415,78.456,HIGH,"Dengue, Malaria, Diarrhea","Increase medical readiness, fogging, awareness camps",2025-12-29 14:21:48

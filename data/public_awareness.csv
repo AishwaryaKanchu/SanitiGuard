@@ -1,0 +1,6 @@
+zone,message,priority
+Zone 1,"Avoid stagnant water, use mosquito repellents, and report open drains.",HIGH
+Zone 4,"Boil drinking water, maintain hygiene, and seek medical help if symptoms appear.",HIGH
+Zone 3,"Maintain hygiene and monitor surroundings for sanitation issues.",MEDIUM
+Zone 2,"Keep surroundings clean and dispose waste properly.",LOW
+Zone 5,"Follow regular cleanliness practices and report issues if observed.",LOW
