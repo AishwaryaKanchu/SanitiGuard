@@ -1,5 +1,48 @@
 let map;
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadRiskData();
+  loadHealthAlerts();
+  loadPublicAwareness();
+  loadTaskVerification();
+});
+
+// ===== DATA LOADERS =====
+
+function loadRiskData() {
+  fetch("../data/risk_output.csv")
+    .then(res => res.text())
+    .then(data => {
+      // parse CSV & use for markers
+    });
+}
+
+function loadHealthAlerts() {
+  fetch("../data/health_alerts.csv")
+    .then(res => res.text())
+    .then(data => {
+      // show health alerts
+    });
+}
+
+function loadPublicAwareness() {
+  fetch("../data/public_awareness.csv")
+    .then(res => res.text())
+    .then(data => {
+      // show awareness messages
+    });
+}
+
+function loadTaskVerification() {
+  fetch("../data/task_verification.csv")
+    .then(res => res.text())
+    .then(data => {
+      // dropdown & task status
+    });
+}
+
+
 // ------------------ CSV LOADER ------------------
 async function loadCSV(file) {
     const response = await fetch(file);
