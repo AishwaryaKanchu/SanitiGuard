@@ -77,6 +77,10 @@ function initMap() {
 
     loadData();
 }
+  
+
+
+
 
 // ------------------ LOAD & PROCESS DATA ------------------
 async function loadData() {
@@ -100,7 +104,7 @@ async function loadData() {
         document.getElementById("taskSelect").appendChild(option);
 
         // ---------- MAP MARKERS ----------
-        let iconColor;
+        /*let iconColor;
         if (riskLevel === "HIGH") iconColor = "red";
         else if (riskLevel === "MEDIUM") iconColor = "yellow";
         else iconColor = "green";
@@ -116,7 +120,32 @@ async function loadData() {
             content: `<b>${location}</b><br>Risk: ${riskLevel}`
         });
         marker.addListener("click", () => info.open(map, marker));
+        */
+        function renderRiskZone(location, riskLevel) {
+  const container = document.getElementById("riskZones");
 
+  let color;
+  if (riskLevel === "HIGH") color = "red";
+  else if (riskLevel === "MEDIUM") color = "orange";
+  else color = "green";
+
+  const card = document.createElement("div");
+  card.style.borderLeft = `6px solid ${color}`;
+  card.style.padding = "10px";
+  card.style.margin = "10px 0";
+  card.style.background = "#f9f9f9";
+
+  card.innerHTML = `
+    <b>${location}</b><br>
+    Risk Level: <span style="color:${color}">${riskLevel}</span>
+  `;
+
+  container.appendChild(card);
+}
+renderRiskZone(location, riskLevel);
+
+
+        
         // ---------- CLEANING TASKS ----------
         if (riskLevel === "HIGH") {
             const li = document.createElement("li");
@@ -154,7 +183,7 @@ async function loadHealthAlerts() {
   const text = await response.text();
 
   const rows = text.trim().split("\n").slice(1);
-  const list = document.getElementById("healthAlerts");
+  const list = document.getElementById("healtAlerts");
 
   list.innerHTML = "";
 
