@@ -1,20 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AI Drain Guardian – Continuous Monitoring</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>SanitiGuard – Smart Sanitation</title>
+    <link rel="stylesheet" href="web/style.css">
 </head>
 <body>
 
-<h2>🛑 AI Drain Guardian – Sanitation Risk Monitor</h2>
-<p>Live digital monitoring of urban drainage risk zones</p>
+<header>
+    SanitiGuard – Smart Sanitation Monitoring
+    <div class="timestamp" id="last-updated">Last updated: --</div>
+</header>
 
-<div id="map"></div>
+<div class="container">
+    <!-- Map Panel -->
+    <div id="map"></div>
 
-<script src="script.js"></script>
-<script async
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABpXDznoWYMiZrrv3cozY-sXz7qZcPX4s&callback=initMap">
-</script>
+    <!-- Side Panel -->
+    <div class="side-panel">
+        <!-- Cleaning Tasks -->
+        <div class="section">
+            <h3>Cleaning Tasks</h3>
+            <ul id="tasks"></ul>
+            <select id="taskSelect">
+                <option value="">Select Task</option>
+            </select>
+            <input type="file" id="photoInput" />
+            <button onclick="uploadProof()">Upload Proof</button>
+            <div id="uploadStatus"></div>
+        </div>
 
+        <!-- Health Alerts -->
+        <div class="section">
+            <h3>Health Alerts</h3>
+            <ul id="alerts"></ul>
+        </div>
+
+        <!-- Public Awareness -->
+        <div class="section">
+            <h3>Public Awareness</h3>
+            <ul id="publicAwareness"></ul>
+        </div>
+
+        
+
+    </div>
+</div>
+
+<footer>
+    SanitiGuard &copy; 2025
+</footer>
+
+<!-- Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABpXDznoWYMiZrrv3cozY-sXz7qZcPX4s&callback=initMap" async defer></script>
+
+<!-- Project JS -->
+<script src="web/script.js"></script>
 </body>
 </html>
