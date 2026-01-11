@@ -26,10 +26,18 @@ header .timestamp {
     height: calc(100vh - 70px);
 }
 
-#map {
+/* #map {
     flex: 2;
     height: 100%;
 }
+    */
+
+#map {
+  width: 50%;
+  height: 100%;
+  min-height: 500px;
+}
+
 
 
 

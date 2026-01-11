@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>SanitiGuard – Smart Sanitation</title>
     <link rel="stylesheet" href="web/style.css">
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet/dist/leaflet.css"
+/>
 
-    <!-- Leaflet CSS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    
 
 </head>
 <body>
@@ -24,7 +25,7 @@
     <!-- Map Panel -->
     
       
-    <div id="map" style="height: 500px;"></div>
+    <div id="map" ></div>
 
     <!-- Side Panel -->
     <div class="side-panel">
@@ -52,11 +53,15 @@
             <ul id="publicAwareness"></ul>
         </div>
         
+    
 
-        <div classs="section">
-          <h3>Risk Zones</h3>
-        <div id="riskZones"></div>
-        </div>
+<div class="section">
+  <h3>Risk Zones</h3>
+  <div id="riskZones"></div>
+</div>
+
+
+       
 
 
     </div>
@@ -68,10 +73,11 @@
     SanitiGuard &copy; 2025
 </footer>
 
-<!-- Google Maps API -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABpXDznoWYMiZrrv3cozY-sXz7qZcPX4s&callback=initMap" async defer></script>
+
 
 <!-- Project JS -->
+ <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 <script src="web/script.js"></script>
 </body>
 </html>
