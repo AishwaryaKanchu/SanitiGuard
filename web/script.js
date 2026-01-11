@@ -1,7 +1,49 @@
-// MVP UPDATE TEST
+
+console.log("SCRIPT LOADED");
+
+
+
+// Fetch risk_output.csv
+fetch("./data/risk_output.csv")
+  .then(response => {
+    if (!response.ok) throw new Error("Network response not ok");
+    return response.text();
+  })
+  .then(data => {
+    console.log("risk_output loaded");
+    console.log(data); // optional: see CSV content
+  })
+  .catch(err => console.error(err));
+
+// Fetch health_alerts.csv
+fetch("./data/health_alerts.csv")
+  .then(response => {
+    if (!response.ok) throw new Error("Network response not ok");
+    return response.text();
+  })
+  .then(data => {
+    console.log("health_alerts loaded");
+    console.log(data); // optional
+  })
+  .catch(err => console.error(err));
+
+// Fetch public_awareness.csv
+fetch("./data/public_awareness.csv")
+  .then(response => {
+    if (!response.ok) throw new Error("Network response not ok");
+    return response.text();
+  })
+  .then(data => {
+    console.log("public_awareness loaded");
+    console.log(data); // optional
+  })
+  .catch(err => console.error(err));
 
 
 let map;
+
+ 
+
 
 // ---------- INIT ----------
 document.addEventListener("DOMContentLoaded", () => {
@@ -38,7 +80,7 @@ async function loadCSV(path) {
 
 // ---------- RISK ZONES ----------
 async function loadRiskData() {
-  const data = await loadCSV("../data/risk_output.csv");
+  const data = await loadCSV("./data/risk_output.csv");
 
   const taskList = document.getElementById("tasks");
   const taskSelect = document.getElementById("taskSelect");
@@ -87,7 +129,7 @@ async function loadRiskData() {
 
 // ---------- HEALTH ALERTS ----------
 async function loadHealthAlerts() {
-  const data = await loadCSV("../data/health_alerts.csv");
+  const data = await loadCSV("./data/health_alerts.csv");
   const list = document.getElementById("alerts");
 
   data.forEach(row => {
@@ -100,7 +142,7 @@ async function loadHealthAlerts() {
 
 // ---------- PUBLIC AWARENESS ----------
 async function loadPublicAwareness() {
-  const data = await loadCSV("../data/public_awareness.csv");
+  const data = await loadCSV("./data/public_awareness.csv");
   const list = document.getElementById("publicAwareness");
 
   data.forEach(row => {
